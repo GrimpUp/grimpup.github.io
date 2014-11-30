@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+require 'compass'
+Compass.add_project_configuration './config/compass.rb'
+
+sass_options = Compass.sass_engine_options
+haml_options = { :format => :html5 }
+
+# favicon
+
+passthrough '/favicon/'
+
+# stylesheets - partials
+
+compile '/assets/stylesheets/main' do
+    filter :sass, sass_options
+end
+
+route '/assets/stylesheets/main' do
+  item.identifier.chop + '.css'
+end
+
+# javascripts - partials
+
+route '/assets/javascripts/main' do
+  item.identifier.chop + '.js'
+end
+
+# static
+
+compile '/static/*' do
+  # don't compile static
+end
+
+route '/static/*' do
+  item.identifier.chop['/static/'.length-1..-1]
+end
+
+# media
+
+route '/media/images/*/' do
+  item.identifier.chop + '.' + item[:extension]
+end
+
+# anything else
+
+compile '*' do
+  if item.binary?
+    # don’t filter binary items
+  else
+    case item[:extension]
+    when 'erb'
+      filter :erb
+    when 'haml'
+      filter :haml, haml_options
+    when 'haml', 'html'
+      layout 'default'
+    end
+  end
+end
+
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :haml, haml_options
