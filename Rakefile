@@ -10,7 +10,7 @@ require 'yaml'
 ##
 # Configurable Constants
 #
-BASE_URL = 'https://myrepo.github.com'
+BASE_URL = 'https://grimpup.github.com'
 # Switch PAGES_BRANCH to master for a Pages repo (e.g. username.github.com) and make NANOC_BRANCH something else.
 NANOC_BRANCH = 'gh-pages-nanoc'
 PAGES_BRANCH = 'gh-pages'
