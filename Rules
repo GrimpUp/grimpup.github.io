@@ -1,29 +1,32 @@
 #!/usr/bin/env ruby
 
-require 'compass'
-Compass.add_project_configuration './config/compass.rb'
-
-sass_options = Compass.sass_engine_options
 haml_options = { :format => :html5 }
 
 # favicon
 
 passthrough '/favicon/'
 
-# stylesheets - partials
+# ignore partials
 
-compile '/assets/stylesheets/main' do
-    filter :sass, sass_options
+compile %r{/assets/(javascripts|stylesheets)/(vendor|site)/.+} do
+  # don’t compile partials
 end
 
-route '/assets/stylesheets/main' do
-  item.identifier.chop + '.css'
+route %r{/assets/(javascripts|stylesheets)/(vendor|site)/.*} do
+  nil
 end
 
-# javascripts - partials
+# stylesheets - javascripts
 
-route '/assets/javascripts/main' do
-  item.identifier.chop + '.js'
+compile '/assets/(javascripts|stylesheets)/main' do
+  filter :sprockets, {
+     :css_compressor => :sass,
+     :js_compressor => :uglifier
+  }
+end
+
+route '/assets/(javascripts|stylesheets)/main' do
+  Nanoc::Sprockets::Helper.asset_path(item)
 end
 
 # static
@@ -40,6 +43,22 @@ end
 
 route '/media/images/*/' do
   item.identifier.chop + '.' + item[:extension]
+end
+
+# font
+
+route '/bower/font-awesome/fonts/*' do
+  File.join('/assets', (Pathname.new(item.identifier).relative_path_from(Pathname.new('/bower/font-awesome/'))).to_s)
+end
+
+# bower
+
+compile '/bower/*' do
+  # don't compile static
+end
+
+route '/bower/*' do
+  nil
 end
 
 # anything else

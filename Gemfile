@@ -15,11 +15,12 @@ gem 'compass'
 gem 'maruku'
 gem 'builder'
 
-# Bootstrap
-gem 'bootstrap-sass'
+# Sprockets
+gem 'nanoc-sprockets3'
 
-# YUI Compressor to compress JS and CSS
-gem 'yui-compressor'
+# Mignifying
+gem 'rainpress'
+gem 'uglifier'
 
 # Guard and Guard::Nanoc to auto-compile + notifications
 gem 'guard'

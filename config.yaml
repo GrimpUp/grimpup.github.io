@@ -53,6 +53,10 @@ data_sources:
     type: static
     items_root: /static/
   -
+    type: static
+    items_root: /bower/
+    prefix: bower
+  -
     # The type is the identifier of the data source. By default, this will be
     # `filesystem_unified`.
     type: filesystem_unified

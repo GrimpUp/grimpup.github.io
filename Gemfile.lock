@@ -3,8 +3,6 @@ GEM
   specs:
     adsf (1.2.0)
       rack (>= 1.0.0)
-    bootstrap-sass (3.3.1.0)
-      sass (~> 3.2)
     builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -25,6 +23,7 @@ GEM
       sass (>= 3.2, < 3.5)
     cri (2.6.1)
       colored (~> 1.2)
+    execjs (2.2.2)
     ffi (1.9.6)
     formatador (0.2.5)
     growl (1.0.3)
@@ -40,6 +39,7 @@ GEM
     haml (4.0.6)
       tilt
     hitimes (1.2.2)
+    json (1.8.1)
     listen (2.8.3)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -50,29 +50,35 @@ GEM
     multi_json (1.10.1)
     nanoc (3.7.4)
       cri (~> 2.3)
+    nanoc-sprockets3 (1.0.2)
+      sprockets (~> 3.0.0.beta)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.2)
+    rainpress (1.0)
     rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     sass (3.4.9)
     slop (3.6.0)
+    sprockets (3.0.0.beta.6)
+      rack (~> 1.0)
     thor (0.19.1)
     tilt (2.0.1)
     timers (4.0.1)
       hitimes
-    yui-compressor (0.12.0)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   adsf
-  bootstrap-sass
   builder
   compass
   growl
@@ -81,6 +87,8 @@ DEPENDENCIES
   haml
   maruku
   nanoc
+  nanoc-sprockets3
+  rainpress
   rake
   rb-fsevent
-  yui-compressor
+  uglifier
