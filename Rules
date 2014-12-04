@@ -6,13 +6,23 @@ haml_options = { :format => :html5 }
 
 passthrough '/favicon/'
 
+# static
+
+compile '/static/*' do
+  # don't compile static
+end
+
+route '/static/*' do
+  item.identifier.chop['/static/'.length-1..-1]
+end
+
 # ignore partials
 
-compile %r{/assets/(javascripts|stylesheets)/(vendor|site)/.+} do
+compile '/assets/(javascripts|stylesheets)/(vendor|site)/.+' do
   # don’t compile partials
 end
 
-route %r{/assets/(javascripts|stylesheets)/(vendor|site)/.*} do
+route '/assets/(javascripts|stylesheets)/(vendor|site)/.*' do
   nil
 end
 
@@ -27,16 +37,6 @@ end
 
 route '/assets/(javascripts|stylesheets)/main' do
   Nanoc::Sprockets::Helper.asset_path(item)
-end
-
-# static
-
-compile '/static/*' do
-  # don't compile static
-end
-
-route '/static/*' do
-  item.identifier.chop['/static/'.length-1..-1]
 end
 
 # media
