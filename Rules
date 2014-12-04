@@ -41,7 +41,7 @@ end
 
 # media
 
-route '/media/images/*/' do
+route '/assets/medias/images/*/' do
   item.identifier.chop + '.' + item[:extension]
 end
 
