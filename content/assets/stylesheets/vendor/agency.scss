@@ -268,7 +268,7 @@ fieldset[disabled] .btn-xl.active {
 header {
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../images/fond.jpg);
+    background-image: url(/assets/medias/images/fond.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -312,7 +312,7 @@ header h2 {
 }
 
 .pattern {
-    background: url(../images/pattern3-30.png); 
+    background: url(/assets/medias/images/pattern3-30.png); 
     width:100%; 
     height:100%;   
 }
@@ -398,7 +398,7 @@ section h3.section-subheading {
     text-transform: none;
 }
 #story {
-    background-image: url(../images/fond.jpg);
+    background-image: url(/assets/medias/images/fond.jpg);
     padding-top: 80px;
     padding-bottom: 50px;
 }
