@@ -1,6 +1,9 @@
 //= require bootstrap-sass/dist/js/bootstrap
 
-//= require vendor/agency
-//= require vendor/classie
+// Plugin Javascript
 //= require vendor/jquery.easing.1.3
+//= require vendor/classie
 //= require vendor/cbpAnimatedHeader
+
+// Custom Theme Javascript
+//= require vendor/agency
