@@ -1,9 +1,8 @@
 @import "compass/reset";
-@import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
-@import "compass/css3/text-shadow";
-@import "bootstrap";
 
-body {
-  background-color: #ffffff;
-}
+// Include Bower components
+@import 'bootstrap-sass/lib/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+
+// Include Vendor components
+@import "vendor/agency";
