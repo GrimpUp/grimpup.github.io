@@ -6913,7 +6913,7 @@ fieldset[disabled] .btn-xl.active {
 
   .navbar-default.navbar-shrink {
     padding: 10px 0;
-    background-color: rgba(255, 255, 255, 0.9); }
+    background-color: white; }
 
   .navbar-default.navbar-shrink .navbar-brand {
     font-size: 1.5em; }
@@ -7164,16 +7164,23 @@ section#contact span {
   bottom: 35px;
   right: 40px; }
 
-#embed-mailchimp2 .btn {
-  float: right;
-  position: relative;
-  right: 30%;
-  bottom: 35px; }
+@media (max-width: 767px) {
+  #embed-mailchimp2 .btn {
+    display: block;
+    margin: auto; } }
+@media (min-width: 768px) {
+  #embed-mailchimp2 .btn {
+    float: right;
+    position: relative;
+    right: 22%;
+    bottom: 34px;
+    font-weight: 700; }
 
+  #embed-mailchimp2 .email {
+    width: 40%; } }
 #embed-mailchimp2 .email {
-  width: 50%;
   padding-left: 20px;
-  margin-left: 10%;
+  margin-left: 25%;
   border: 2px solid #D9E100;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7245,3 +7252,31 @@ img::-moz-selection {
 
 body {
   webkit-tap-highlight-color: #fed136; }
+
+/*slider*/
+.carousel-control.right {
+  left: auto;
+  rigth: 0;
+  background-image: none; }
+
+.carousel-control.left {
+  left: 0;
+  rigth: auto;
+  background-image: none; }
+
+.carousel-control {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin: auto; }
