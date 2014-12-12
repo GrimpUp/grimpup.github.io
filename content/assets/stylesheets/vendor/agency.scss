@@ -178,10 +178,20 @@ fieldset[disabled] .btn-xl.active {
     color: #fed136;
 }
 
-.navbar-right {
- position: relative;
-    right: 20%;
+@media(min-width: 768px) {
+    .navbar-right {
+        position: relative;
+        right: 20%;
+    }
 }
+@media(max-width: 767px) {
+    .navbar-right {
+        text-align: center;
+    }
+}
+
+
+
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
