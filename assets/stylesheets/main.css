@@ -6850,10 +6850,13 @@ fieldset[disabled] .btn-xl.active {
   font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
   color: #fed136; }
 
-.navbar-right {
-  position: relative;
-  right: 20%; }
-
+@media (min-width: 768px) {
+  .navbar-right {
+    position: relative;
+    right: 20%; } }
+@media (max-width: 767px) {
+  .navbar-right {
+    text-align: center; } }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
@@ -7027,6 +7030,9 @@ section h3.section-subheading {
 /****************/
 #services {
   background-color: #F6F6F6; }
+
+#services h4 {
+  min-height: 39px; }
 
 .service-heading {
   margin: 15px 0;
