@@ -12,11 +12,11 @@ require 'yaml'
 #
 BASE_URL = 'https://grimpup.github.com'
 # Switch PAGES_BRANCH to master for a Pages repo (e.g. username.github.com) and make NANOC_BRANCH something else.
-NANOC_BRANCH = 'gh-pages-nanoc'
+NANOC_BRANCH = 'gh-pages'
 PAGES_BRANCH = 'master'
 # A list of files to include in the deployment that are not in the output/ directory.
 ADDITIONAL_FILES = [
-  # 'CNAME'
+  'CNAME'
 ]
 
 ##
